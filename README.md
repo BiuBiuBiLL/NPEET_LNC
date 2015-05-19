@@ -24,6 +24,35 @@ Output: 25.29758574548632
 Output: 0.62745310245310382
 ```
 
+
+To see the test example in ``test.py'', simply type the following in terminal:
+```python test.py
+Output:
+Testing 2D linear relationship Y=X+Uniform_Noise
+noise level=1e-07, Nsamples = 500
+True MI(x:y) 16.0472260191
+Kraskov MI(x:y) 5.79082342999
+LNC MI(x:y) 15.9355050641
+
+Testing 2D quadratic relationship Y=X^2+Uniform_Noise
+noise level=1e-07, Nsamples = 1000
+True MI(x:y) 15.8206637545
+Kraskov MI(x:y) 6.48347086055
+LNC MI(x:y) 11.4586276609
+
+Testing 3D linear relationship Y=X+Uniform_Noise, Z=X+Uniform_Noise
+noise level=1e-07, Nsamples = 500
+True MI(x:y:z) 32.2836569188
+Kraskov MI(x:y:z) 11.58164686
+LNC MI(x:y:z) 32.1846129957
+
+Testing 3D quadratic relationship Y=X^2+Uniform_Noise, Z=X^2+Uniform_Noise
+noise level=1e-07, Nsamples = 500
+True MI(x:y:z) 31.5020968975
+Kraskov MI(x:y:z) 11.57764686
+LNC MI(x:y:z) 25.6686276941
+```
+
 One need to specify the thresholding parameter alpha when using LNC estimator. This parameter is related to the nearest-neighbor parameter k and  dimensionality d, see ``alpha.xlsx'' for the detailed alpha value to use.
 
 Also see the references on the implemented estimators.
