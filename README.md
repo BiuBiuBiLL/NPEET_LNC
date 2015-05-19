@@ -25,7 +25,8 @@ Output: 0.62745310245310382
 ```
 
 
-To see the test example in ``test.py'', simply type the following in terminal:
+To see the test example in ``test.py'', simply type the following in terminal
+
 ```python test.py
 Output:
 Testing 2D linear relationship Y=X+Uniform_Noise
