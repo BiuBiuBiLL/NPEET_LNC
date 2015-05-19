@@ -55,7 +55,7 @@ Kraskov MI(x:y:z) 11.57764686
 LNC MI(x:y:z) 25.6686276941
 ```
 
-One need to specify the thresholding parameter alpha when using LNC estimator. This parameter is related to the nearest-neighbor parameter k and  dimensionality d, see ```alpha.xlsx``` for the detailed alpha value to use.
+One need to specify the thresholding parameter alpha when using LNC estimator. This parameter is related to the nearest-neighbor parameter ```k``` and  dimensionality ```d```, see ```alpha.xlsx``` for the detailed alpha value to use.
 
 Also see the references on the implemented estimators.
 
