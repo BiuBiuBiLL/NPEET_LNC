@@ -60,12 +60,12 @@ One need to specify the thresholding parameter alpha when using LNC estimator. T
 Also see the references on the implemented estimators.
 
 				A Kraskov, H Stögbauer, P Grassberger. 
-				http://pre.aps.org/abstract/PRE/v69/i6/e066138
+				<a href="http://pre.aps.org/abstract/PRE/v69/i6/e066138">http://pre.aps.org/abstract/PRE/v69/i6/e066138</a>
 				Estimating Mutual Information
 				PRE, 2004.
 
 				Shuyang Gao, Greg Ver Steeg and Aram Galstyan 
-				http://arxiv.org/abs/1411.2003
+				<a href="http://arxiv.org/abs/1411.2003">http://arxiv.org/abs/1411.2003</a>
 				Efficient Estimation of Mutual Information for Strongly Dependent Variables
 				AISTATS, 2015.
 
