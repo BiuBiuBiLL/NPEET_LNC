@@ -1,7 +1,8 @@
 NPEET_LNC
 =====
 
-Non-parametric Entropy Estimation Toolbox (Local Non-uniform Correction Branch)
+Mutual information with Local Non-uniform Correction(a branch of <a href="https://github.com/gregversteeg/NPEET/">NPEET</a>)
+
 
 This package contains Python code implementing several entropy estimation functions for both discrete and continuous variables. Information theory provides a model-free way find structure in complex systems, but difficulties in estimating these quantities has traditionally made these techniques infeasible. This package attempts to allay these difficulties by making modern state-of-the-art entropy estimation methods accessible in a single easy-to-use python library. 
 
