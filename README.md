@@ -25,7 +25,7 @@ Output: 0.62745310245310382
 ```
 
 
-To see the test example in ```test.py```, simply type the following in terminal
+To run the test example in ```test.py```, simply type the following in terminal
 
 ```
 $python test.py
