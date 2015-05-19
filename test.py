@@ -1,7 +1,7 @@
 #Python 2.7
 #Testing local non-uniform estimators
 
-from mie import MI
+from lnc import MI
 from math import log,pi
 import numpy as np
 import numpy.random as nr
