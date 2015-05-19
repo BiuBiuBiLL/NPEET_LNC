@@ -23,8 +23,10 @@ Output: 25.29758574548632
 >>> MI.mi_Kraskov([x,y],k=5,base=np.exp(1)) #Same data applied to Kraskov estimator
 Output: 0.62745310245310382
 ```
-		
-See the references on implemented estimators.
+
+One need to specify the thresholding parameter alpha when using LNC estimator. This parameter is related to the nearest-neighbor parameter k and the dimensionality d, see alpha.xlsx for a detailed alpha value to use.
+
+Also see the references on implemented estimators.
 
 				A Kraskov, H Stögbauer, P Grassberger. 
 				http://pre.aps.org/abstract/PRE/v69/i6/e066138
