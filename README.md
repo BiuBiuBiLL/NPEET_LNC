@@ -26,7 +26,7 @@ Output: 0.62745310245310382
 
 One need to specify the thresholding parameter alpha when using LNC estimator. This parameter is related to the nearest-neighbor parameter k and  dimensionality d, see ``alpha.xlsx'' for the detailed alpha value to use.
 
-Also see the references on implemented estimators.
+Also see the references on the implemented estimators.
 
 				A Kraskov, H Stögbauer, P Grassberger. 
 				http://pre.aps.org/abstract/PRE/v69/i6/e066138
