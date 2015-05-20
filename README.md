@@ -1,7 +1,7 @@
 NPEET_LNC
 =====
 
-Mutual information Estimation with Local Non-uniform Correction (a branch of <a href="https://github.com/gregversteeg/NPEET/">NPEET</a> Non-parametric Entropy Estimation Toolbox)
+Mutual information Estimation with Local Non-uniformity Correction (a branch of <a href="https://github.com/gregversteeg/NPEET/">NPEET</a> Non-parametric Entropy Estimation Toolbox)
 
 This package contains Python code implementing mutual information estimation functions for continuous variables. This estimator gives a correction term to the traditional kNN estimator and can estimator mutual information accurately for strongly dependent variables with limited samples.
 
