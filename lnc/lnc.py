@@ -8,9 +8,27 @@ import numpy.linalg as la
 from numpy.linalg import eig, inv, norm, det
 from scipy import stats
 from math import log, pi, hypot, fabs, sqrt
+from pathlib import Path
+import pandas as pd
+import pkg_resources
 
 
 class MI:
+
+    def load_data():
+        """Return a dataframe about the 68 different Roman Emperors.
+
+        Contains the following fields:
+            index          68 non-null int64
+            name           68 non-null object
+            name.full      68 non-null object
+        ... (docstring truncated) ...
+
+        """
+        # This is a stream-like object. If you want the actual info, call
+        # stream.read()
+        stream = pkg_resources.resource_stream(__name__, 'data/alpha.csv')
+        return pd.read_csv(stream)[["k", "d", "alpha"]]
 
     @staticmethod
     def zip2(*args):
@@ -90,7 +108,7 @@ class MI:
         return ret
 
     @staticmethod
-    def mi_LNC(X, k=5, base=np.exp(1), alpha=0.25, intens=1e-10):
+    def mi_LNC(X, k=3, base=np.exp(1), alpha=0.25, intens=1e-10):
         """
         The mutual information estimator by PCA-based local non-uniform
         correction(LNC)
@@ -102,7 +120,15 @@ class MI:
         """
         # N is the number of samples
         N = len(X[0])
-
+        d = len(X)
+        print(d, k)
+        df = MI.load_data()
+        alpha = df[df["k"] == k][df["d"] == d]["alpha"].values
+        if len(alpha) == 0:
+            alpha = 0.15
+        else:
+            alpha = alpha[0]
+        print(alpha)
         # First Step: calculate the mutual information using the Kraskov mutual
         # information estimator adding small noise to X, e.g., x<-X+noise
         x = []
