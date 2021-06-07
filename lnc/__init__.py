@@ -1,3 +1,5 @@
+from .lnc import MI
+
 __author__ = "Shuyang Gao (BiLL)"
 __email__ = "gaos@usc.edu"
 

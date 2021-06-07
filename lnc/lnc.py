@@ -77,11 +77,11 @@ class MI:
                 for i in range(len(x)):
                     points_knn[i].append(points[knn[1][j]][i])
 
-        # Find distances to k-nearest neighbors in each marginal space
-        for i in range(k+1):
-            for j in range(len(x)):
-                if dvec[j][-1] < fabs(points_knn[j][i]-points_knn[j][0]):
-                    dvec[j][-1] = fabs(points_knn[j][i]-points_knn[j][0])
+            # Find distances to k-nearest neighbors in each marginal space
+            for i in range(k+1):
+                for j in range(len(x)):
+                    if dvec[j][-1] < fabs(points_knn[j][i]-points_knn[j][0]):
+                        dvec[j][-1] = fabs(points_knn[j][i]-points_knn[j][0])
 
         ret = 0.
         for i in range(len(x)):
@@ -195,22 +195,22 @@ class MI:
                     if fabs(tem) > maxV:
                         maxV = fabs(tem)
                 cur.append(maxV)
-                V_rect = V_rect + log(cur[i])
+                V_rect = V_rect + np.log(cur[i])
 
             # Calculate the volume of original box
             log_knn_dist = 0.
             for i in range(len(dvec)):
-                log_knn_dist += log(dvec[i][tot])
+                log_knn_dist += np.log(dvec[i][tot])
 
             # Perform local non-uniformity checking
-            if V_rect >= log_knn_dist + log(alpha):
+            if V_rect >= log_knn_dist + np.log(alpha):
                 V_rect = log_knn_dist
 
             # Update correction term
             if (log_knn_dist - V_rect) > 0:
                 e += (log_knn_dist - V_rect)/N
 
-        return (ret + e)/log(base)
+        return (ret + e)/np.log(base)
 
     @staticmethod
     def entropy(x, k=3, base=np.exp(1), intens=1e-10):
@@ -225,5 +225,5 @@ class MI:
         x = [list(p + intens*nr.rand(len(x[0]))) for p in x]
         tree = ss.cKDTree(x)
         nn = [tree.query(point, k+1, p=float('inf'))[0][k] for point in x]
-        const = digamma(N)-digamma(k) + d*log(2)
-        return (const + d*np.mean(map(log, nn)))/log(base)
+        const = digamma(N)-digamma(k) + d*np.log(2)
+        return (const + d*np.mean(np.log(nn)))/np.log(base)

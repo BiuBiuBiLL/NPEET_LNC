@@ -35,20 +35,20 @@ with open('requirements.txt') as f:
 use_scm = {"write_to": "NPEET_LNC/_version.py"}
 
 setup(
-    name='NPEET_LNC',
+    name='lnc',
     author='Shuyang Gao (BiLL)',
     author_email='gaos@usc.edu',
     license='Apache Software License 2.0',
     url='https://github.com/ViktorvdValk/NPEET_LNC',
     description='''Mutual information Estimation with Local Non-uniformity
         Correction, a branch of NPEET Non-parametric Entropy Estimation
-        Toolbox)'''
+        Toolbox)''',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     packages=find_packages(),
     python_requires='>=3.6',
     install_requires=requirements,
-    version=get_version("NPEET_LNC/__init__.py"),
+    version=get_version("lnc/__init__.py"),
     setup_requires=['setuptools_scm'],
     classifiers=[
         'Development Status :: 4 - Beta',
