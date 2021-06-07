@@ -1,14 +1,8 @@
-# Python 2.7
-# Written by Shuyang Gao (BiLL), email: gaos@usc.edu
-
 from scipy import stats
 import numpy as np
 import scipy.spatial as ss
 from scipy.special import digamma, gamma
 import numpy.random as nr
-import random
-import matplotlib.pyplot as plt
-import re
 from scipy.stats.stats import pearsonr
 import numpy.linalg as la
 from numpy.linalg import eig, inv, norm, det
