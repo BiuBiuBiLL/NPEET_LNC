@@ -16,17 +16,10 @@ import pkg_resources
 class MI:
 
     def load_data():
-        """Return a dataframe about the 68 different Roman Emperors.
-
-        Contains the following fields:
-            index          68 non-null int64
-            name           68 non-null object
-            name.full      68 non-null object
-        ... (docstring truncated) ...
-
         """
-        # This is a stream-like object. If you want the actual info, call
-        # stream.read()
+        Return a dataframe with the alpha values for different combinations of
+        d and k
+        """
         stream = pkg_resources.resource_stream(__name__, 'data/alpha.csv')
         return pd.read_csv(stream)[["k", "d", "alpha"]]
 
@@ -104,11 +97,12 @@ class MI:
         ret = 0.
         for i in range(len(x)):
             ret -= MI.avgdigamma(x[i], dvec[i])
-        ret += digamma(k) - (float(len(x))-1.)/float(k) + (float(len(x))-1.) * digamma(len(x[0]))
+        ret += digamma(k) - (float(len(x))-1.)/float(k) + (
+            float(len(x))-1.) * digamma(len(x[0]))
         return ret
 
     @staticmethod
-    def mi_LNC(X, k=3, base=np.exp(1), alpha=0.25, intens=1e-10):
+    def mi_LNC(X, k=3, base=np.exp(1), intens=1e-10):
         """
         The mutual information estimator by PCA-based local non-uniform
         correction(LNC)
@@ -118,17 +112,21 @@ class MI:
         alpha is a threshold parameter related to k and d(dimensionality),
         please refer to our paper for details about this parameter
         """
-        # N is the number of samples
+        # N is the number of samples, d is the dimensionality of the data
         N = len(X[0])
         d = len(X)
-        print(d, k)
+
+        # Query data base for correct alpha
         df = MI.load_data()
-        alpha = df[df["k"] == k][df["d"] == d]["alpha"].values
+        df2 = df[df["k"] == k]
+        alpha = df2[df2["d"] == d]["alpha"].values
+
+        # If alpha not in database set default to 0.15
         if len(alpha) == 0:
             alpha = 0.15
         else:
             alpha = alpha[0]
-        print(alpha)
+
         # First Step: calculate the mutual information using the Kraskov mutual
         # information estimator adding small noise to X, e.g., x<-X+noise
         x = []
@@ -170,7 +168,8 @@ class MI:
         ret = 0.
         for i in range(len(x)):
             ret -= MI.avgdigamma(x[i], dvec[i])
-        ret += digamma(k) - (float(len(x))-1.)/float(k) + (float(len(x))-1.) * digamma(len(x[0]))
+        ret += digamma(k) - (float(len(x))-1.)/float(k) + (
+            float(len(x))-1.) * digamma(len(x[0]))
 
         # Second Step: Add the correction term (Local Non-Uniform Correction)
         e = 0.

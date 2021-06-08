@@ -23,9 +23,12 @@ for i in range(N):
 usedN = 500
 print('Testing 2D linear relationship Y=X+Uniform_Noise')
 print('noise level=' + str(noise) + ", Nsamples = " + str(usedN))
-print('True MI(x:y)', MI.entropy(y_for_ent[:1000], k=1,base=np.exp(1),intens=0.0)-np.log(noise))
-print('Kraskov MI(x:y)', MI.mi_Kraskov([x[:usedN],y[:usedN]],k=1,base=np.exp(1),intens=0.0))
-print('LNC MI(x:y)', MI.mi_LNC([x[:usedN],y[:usedN]],k=5,base=np.exp(1),alpha=0.25,intens=0.0))
+print('True MI(x:y)', MI.entropy(y_for_ent[:1000], k=1, base=np.exp(1),
+                                 intens=0.0)-np.log(noise))
+print('Kraskov MI(x:y)', MI.mi_Kraskov([x[:usedN], y[:usedN]], k=1,
+                                       base=np.exp(1), intens=0.0))
+print('LNC MI(x:y)', MI.mi_LNC([x[:usedN], y[:usedN]], k=5, base=np.exp(1),
+                               intens=0.0))
 
 # 2D Quadratic
 noise = 1e-7
@@ -43,11 +46,14 @@ for i in range(N):
 usedN = 1000
 print('Testing 2D quadratic relationship Y=X^2+Uniform_Noise')
 print('noise level=' + str(noise) + ", Nsamples = " + str(usedN))
-print('True MI(x:y)', MI.entropy(y_for_ent[:1000],k=1,base=np.exp(1),intens=0.0)-np.log(noise))
-print('Kraskov MI(x:y)', MI.mi_Kraskov([x[:usedN],y[:usedN]],k=1,base=np.exp(1),intens=0.0))
-print('LNC MI(x:y)', MI.mi_LNC([x[:usedN],y[:usedN]],k=5,base=np.exp(1),alpha=0.25,intens=0.0))
+print('True MI(x:y)', MI.entropy(y_for_ent[:1000], k=1, base=np.exp(1),
+                                 intens=0.0)-np.log(noise))
+print('Kraskov MI(x:y)', MI.mi_Kraskov([x[:usedN], y[:usedN]], k=1,
+                                       base=np.exp(1), intens=0.0))
+print('LNC MI(x:y)', MI.mi_LNC([x[:usedN], y[:usedN]], k=5, base=np.exp(1),
+                               intens=0.0))
 
-#3D Linear
+# 3D Linear
 noise = 1e-7
 x = []
 for i in range(N):
@@ -66,9 +72,15 @@ for i in range(N):
 usedN = 500
 print('Testing 3D linear relationship Y=X+Uniform_Noise, Z=X+Uniform_Noise')
 print('noise level=' + str(noise) + ", Nsamples = " + str(usedN))
-print('True MI(x:y:z)', MI.entropy(y_for_ent[:1000],k=1,base=np.exp(1),intens=0.0)-np.log(noise)+MI.entropy(z_for_ent[:1000],k=1,base=np.exp(1),intens=0.0)-np.log(noise))
-print('Kraskov MI(x:y:z)', MI.mi_Kraskov([x[:usedN],y[:usedN],z[:usedN]],k=1,base=np.exp(1),intens=0.0))
-print('LNC MI(x:y:z)', MI.mi_LNC([x[:usedN],y[:usedN],z[:usedN]],k=5,base=np.exp(1),alpha=0.167,intens=0.0))
+print('True MI(x:y:z)',
+      MI.entropy(y_for_ent[:1000], k=1, base=np.exp(1),
+                 intens=0.0)-np.log(noise)+MI.entropy(
+                    z_for_ent[:1000], k=1, base=np.exp(1),
+                    intens=0.0)-np.log(noise))
+print('Kraskov MI(x:y:z)', MI.mi_Kraskov([x[:usedN], y[:usedN], z[:usedN]],
+                                         k=1, base=np.exp(1), intens=0.0))
+print('LNC MI(x:y:z)', MI.mi_LNC([x[:usedN], y[:usedN], z[:usedN]], k=5,
+                                 base=np.exp(1), intens=0.0))
 
 
 # 3D Quadratic
@@ -88,8 +100,13 @@ for i in range(N):
 
 # number of samples used for calculation
 usedN = 500
-print('Testing 3D quadratic relationship Y=X^2+Uniform_Noise, Z=X^2+Uniform_Noise')
+print('Testing 3D quadratic relationship Y=X^2+Uniform_Noise, \
+    Z=X^2+Uniform_Noise')
 print('noise level=' + str(noise) + ", Nsamples = " + str(usedN))
-print('True MI(x:y:z)', MI.entropy(y_for_ent[:1000],k=1,base=np.exp(1),intens=0.0)-np.log(noise)+MI.entropy(z_for_ent[:1000],k=1,base=np.exp(1),intens=0.0)-np.log(noise))
-print('Kraskov MI(x:y:z)', MI.mi_Kraskov([x[:usedN],y[:usedN],z[:usedN]],k=1,base=np.exp(1),intens=0.0))
-print('LNC MI(x:y:z)', MI.mi_LNC([x[:usedN],y[:usedN],z[:usedN]],k=5,base=np.exp(1),alpha=0.167,intens=0.0))
+print('True MI(x:y:z)', MI.entropy(y_for_ent[:1000], k=1, base=np.exp(1),
+      intens=0.0)-np.log(noise)+MI.entropy(z_for_ent[:1000], k=1,
+      base=np.exp(1), intens=0.0)-np.log(noise))
+print('Kraskov MI(x:y:z)', MI.mi_Kraskov([x[:usedN], y[:usedN], z[:usedN]],
+      k=1, base=np.exp(1), intens=0.0))
+print('LNC MI(x:y:z)', MI.mi_LNC([x[:usedN], y[:usedN], z[:usedN]], k=5,
+      base=np.exp(1), intens=0.0))
